@@ -7,7 +7,7 @@ JOBS=[
 "id":1 ,
 "title": "Data Analyst",
 "company": "Google",
-"location": "Mountain View",
+"location": "Remote",
 "salary": "$120,000"
 
 },
@@ -23,14 +23,14 @@ JOBS=[
   "title": "Data Scientist",
   "company": "Microsoft",
   "location": "Redmond",
-  "salary": "$90,000"
+  "salary": "$102,000"
 },
   {
     "id":4,
     "title": "Backend engineer",
     "company": "safaricom",
     "location": "Mountain View",
-    "salary": "$100,000"
+    "salary": "$1800,000"
 }
 ]
 
