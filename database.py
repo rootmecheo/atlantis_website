@@ -1,6 +1,9 @@
 from sqlalchemy import create_engine, text
+import os
 
-db_connection_string = "mysql+pymysql://6x33avd9nis33j29xn7m:pscale_pw_jVCukQFK1ES7IncxnBzyCtD43fdfTQVmOzc9ASSetPn@aws.connect.psdb.cloud/atlantiscareers"
+# retrieve environment variable
+db_connection_string = os.environ["DB_CONNECTION_STRING"]
+
 engine = create_engine(
   db_connection_string,
   connect_args= {
