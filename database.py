@@ -1,5 +1,6 @@
-from sqlalchemy import create_engine, text
 import os
+
+from sqlalchemy import create_engine, text
 
 # retrieve environment variable
 db_connection_string = os.environ["DB_CONNECTION_STRING"]
@@ -12,19 +13,16 @@ engine = create_engine(
         }
     } ) 
 
-with engine.connect() as conn:
-  result = conn.execute(text("SELECT * FROM jobs"))
-
-  result_dicts = [r._asdict() for r in result.all()]
-  print(result_dicts)
-
-def load_jobs_from_db():
-  with engine.connect() as conn:
-    result = conn.execute(text("SELECT * FROM jobs"))
-    jobs = [r._asdict() for r in result.all()]
-    return jobs
-  
-
-  
-
+def load_jobs_from_db(id=None):
+  if id:
+      with engine.connect() as conn:
+          result = conn.execute(text("SELECT * FROM jobs WHERE id = :val"), {"val": id})
+          jobs = [r._asdict() for r in result.all()]
+          return jobs
+  else:
+      # If no id is provided, fetch all jobs
+      with engine.connect() as conn:
+          result = conn.execute(text("SELECT * FROM jobs"))
+          jobs = [r._asdict() for r in result.all()]
+          return jobs
 
