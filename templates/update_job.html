@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Job Update</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    {% include 'banner.html' %}
+    <div class="container">
+      <h3 style="font-weight: normal;">Update Job =><u>{{job['title']}} </u> </h3>
+      <form action="/job/{{job['id']}}/update" method="post">
+        
+        {% include "job_post_item.html" %}
+      </form>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>

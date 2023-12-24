@@ -1,0 +1,31 @@
+<!-- Include CKEditor from CDN -->
+
+<div class="mb-2"><label>Title:</label><br>
+   <input type="text" required name="title" value="{{job['title']}}"></div>
+
+   <div class="mb-2"><label>Location:</label><br>
+   <input type="text" required name="location" value="{{job['location']}}"></div>
+
+  <div class="mb-2">
+    <label>Salary:</label><br>
+    <input type="text"  name="salary" value="{{job['salary']}}">
+  </div>
+
+  <div class="mb-2">
+    <label>Currency:</label><br>
+    <input required name="currency" value="{{job['currency']}}">
+  </div>
+
+  <div class="mb-2">
+    <label>Responsibilities:</label><br>
+    <textarea required name="responsibilities">{{job['responsibilities']}}</textarea>
+  </div>
+
+  <div class="mb-2">
+    <label>Requirements:</label><br>
+    <textarea type="text"  required name="requirements">{{job['requirements']}}</textarea>
+  </div>
+
+  <input type="submit">
+</div>
+

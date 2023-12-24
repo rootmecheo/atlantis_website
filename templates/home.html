@@ -23,7 +23,16 @@
         <img class="img-fluid" src="/static/people.avif" width="" height="240" alt="image of atlantis">
       </div>
     </div>
-      <h2 class="text-center mt-2 mb-4">Job Opennings</h2>
+      <div class="row mt-4">
+        <div class="col col-9">
+           <h2 class="text-center mt-2 mb-4">Job Opennings</h2>
+        </div>
+        <div class="col" >
+           <a href="{{ url_for('post_job' )}}" type="button" class="btn btn-outline-secondary"> Post New Job</a>
+        </div>
+        
+      </div>
+      
       <div>
         {% for job in jobs %}
           {% include 'jobitem.html' %}
@@ -34,9 +43,8 @@
       <div class="text-center">
         <a target="_blank" href="mailto:mecheo.udemy@gmail.com?subject=Question%20about%20job%20openning&body=My%20name%3A%20%3Cyour%20name%3E%0D%0AMy%20question%3A%20%3Center%20question%20here%3E" type="button" class="btn btn-outline-primary">Contact Us</a>
 
-        
       </div>
-      
+    
     </div>
     {% include 'footer.html'%}
   </body>
