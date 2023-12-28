@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang='eng'>
+  <head>
+    <meta charset='UTF-8'>
+    <title>{% block title %}{% endblock %}</title>
+    {% include'bootstrap.html' %}
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    {% block content %}{% endblock %}
+    {% include 'footer.html' %}
+  </body>
+</html>
+  

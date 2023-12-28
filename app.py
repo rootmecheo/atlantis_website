@@ -1,13 +1,9 @@
 from flask import Flask, jsonify, render_template, request, redirect
 
-from flask_ckeditor import CKEditor
-
 from database import add_application_to_db, load_jobs_from_db, add_job_to_db, remove_job_from_db, update_job_in_db
 
-from forms import JobForm
 
 app = Flask(__name__)
-ckeditor = CKEditor(app)
 app.secret_key = 'atlantis-global-2023'
 
 @app.route( "/")
@@ -41,7 +37,7 @@ def delete_job(id):
 
 @app.route("/job/<id>/apply")
 def apply_to_job(id):
-  data = request.form
+  form=ApplicationForm()
   job = load_jobs_from_db(id)[0]
 
   add_application_to_db(id, data)
